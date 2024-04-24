@@ -1,35 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { Button } from "./Button/button";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] =useState(0); //Recarga la parte de la pagina que necesita no toda
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  const add= () =>{
+    setCount(count+1);
+  }
+  const substract= () =>{
+    setCount(count-1);
+  }
+
+  return <div className="flex items-center border p-5 justify-between">
+    <Button callback={substract} label="-"/>
+    <p>{count}</p>
+    <Button callback={add} label="+"/>
+  </div>;
 }
 
-export default App
+export default App;
