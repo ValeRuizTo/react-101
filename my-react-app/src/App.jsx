@@ -3,6 +3,8 @@ import { Button } from "./Button/button";
 
 function App() {
   const [count, setCount] =useState(0); 
+  const [newCount, setNewCount] =useState(0); 
+
   //UseState sirve para tener un estado y una funcion que lo modifique solamente
   //UseEffect sirve para cuando yo quiero que se modifique cuando pasa algo
   const add= () =>{
@@ -11,6 +13,11 @@ function App() {
   const substract= () =>{
     setCount(count-1);
   }
+
+  const AddnewCount= () =>{
+    setNewCount(newCount+1);
+  }
+
 //Un cambio en el estado hacer re render de la pagina COMPLETA, si se usa UseSTATE
   console.log("Im rendering") 
 
@@ -30,10 +37,17 @@ function App() {
     console.log(`reacting to state change, New Value: ${count}`)
   },[count])
 
+  
+  useEffect(()=>{
+    console.log(`reacting to state change, New count Value: ${newCount}`)
+  },[newCount])
+
   return <div className="flex items-center border p-5 justify-between">
     <Button callback={substract} label="-"/>
     <p>{count}</p>
     <Button callback={add} label="+" />
+    <Button callback={AddnewCount} label="NewCount"/>
+    <p>{newCount}</p>
   </div>;
 }
 
