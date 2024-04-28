@@ -1,0 +1,6 @@
+.left-container{
+    background-color: yellow;
+    flex: 1;
+    grid-area: left;
+
+}

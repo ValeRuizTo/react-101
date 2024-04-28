@@ -1,0 +1,6 @@
+.footer-container{
+    background-color: lightblue;
+    flex: 1;
+    grid-area: footer;
+
+}

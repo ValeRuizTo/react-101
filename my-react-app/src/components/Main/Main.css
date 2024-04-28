@@ -1,0 +1,6 @@
+.main-container{
+    background-color: white;
+    flex: 1;
+    grid-area: main;
+
+}

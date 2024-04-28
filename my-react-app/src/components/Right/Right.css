@@ -1,0 +1,6 @@
+.right-container{
+    background-color: green;
+    flex: 1;
+    grid-area: right;
+
+}
